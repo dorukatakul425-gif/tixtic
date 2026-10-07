@@ -23,6 +23,9 @@ jobs:
           unzip tictic_nolibs.zip -d extracted
           cp -r "extracted/Android source code/." .
 
+      - name: Fix line endings
+        run: sed -i 's/\r//' gradlew
+
       - name: Make gradlew executable
         run: chmod +x gradlew
 
